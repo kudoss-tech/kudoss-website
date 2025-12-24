@@ -397,5 +397,32 @@
 					$window.on('load', function() {
 						$main._show(location.hash.substr(1), true);
 					});
+// Formspree Contact Form AJAX
+const form = document.getElementById("contact-form");
+
+if (form) {
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    fetch("https://formspree.io/f/maqwzpqn", {
+      method: "POST",
+      headers: {
+        "Accept": "application/json"
+      },
+      body: new FormData(form)
+    })
+    .then(response => {
+      if (response.ok) {
+        alert("Thank you! Your message has been sent.");
+        form.reset();
+      } else {
+        alert("Oops! Something went wrong.");
+      }
+    })
+    .catch(() => {
+      alert("Network error. Please try again later.");
+    });
+  });
+}
 
 })(jQuery);
