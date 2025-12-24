@@ -2838,3 +2838,41 @@ body.idle #cursor, body.idle #cursor-border {
     transform: scale(1);
   }
 }
+.form-success {
+  text-align: center;
+  padding: 2rem 1rem;
+  display: none;
+}
+
+.success-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  background: #1a1f2b;
+  color: #d4af37;
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity .4s ease;
+}
+
+.fade-in {
+  animation: fadeInUp .5s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

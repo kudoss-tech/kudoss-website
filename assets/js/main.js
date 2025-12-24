@@ -424,18 +424,40 @@ if (form) {
     });
   });
 }
-
-// Contact Form Success Handling
-const form = document.getElementById("contact-form");
+// Formspree Contact Form AJAX + Success UI
+const contactForm = document.getElementById("contact-form");
 const successMessage = document.getElementById("form-success");
 
-if (form && successMessage) {
-  form.addEventListener("submit", function () {
-    setTimeout(() => {
-      form.style.display = "none";
-      successMessage.style.display = "block";
-    }, 800);
+if (contactForm) {
+  contactForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    fetch("https://formspree.io/f/maqwzpqn", {
+      method: "POST",
+      headers: { "Accept": "application/json" },
+      body: new FormData(contactForm)
+    })
+    .then(response => {
+      if (response.ok) {
+        contactForm.classList.add("fade-out");
+
+        setTimeout(() => {
+          contactForm.style.display = "none";
+          successMessage.style.display = "block";
+          successMessage.classList.add("fade-in");
+        }, 500);
+
+        contactForm.reset();
+      } else {
+        alert("Something went wrong.");
+      }
+    })
+    .catch(() => {
+      alert("Network error.");
+    });
   });
 }
+
+
 
 })(jQuery);
