@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kudoss-tech.github.io/kudoss-website/sitemap.xml
