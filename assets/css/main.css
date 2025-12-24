@@ -2769,3 +2769,31 @@ body.idle #cursor, body.idle #cursor-border {
         filter: contrast(1.05);
     }
 }
+.main-logo {
+  width: 96px;
+  height: auto;
+}
+/* KUDOSS Logo Integration */
+#header .logo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  overflow: hidden;
+}
+
+#header .logo img {
+  width: 85%;
+  height: auto;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: none;
+}
+#header .logo {
+  box-shadow: 0 0 35px rgba(212, 175, 55, 0.35);
+padding: 12px;
+}
