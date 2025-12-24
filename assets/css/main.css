@@ -2773,26 +2773,25 @@ body.idle #cursor, body.idle #cursor-border {
   width: 96px;
   height: auto;
 }
-/* KUDOSS Logo Integration */
+/* Header logo container */
 #header .logo {
-  width: 120px;
-  height: 120px;
+  width: 7rem;
+  height: 7rem;
+  padding: 0;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(0, 0, 0, 0.35);
+  box-shadow: 0 0 40px rgba(212, 175, 55, 0.45);
+  backdrop-filter: blur(6px);
   display: flex;
   align-items: center;
   justify-content: center;
-  background: transparent;
-  overflow: hidden;
 }
 
+/* Logo image itself */
 #header .logo img {
-  width: 85%;
-  height: auto;
+  width: 88%;
+  height: 88%;
+  object-fit: contain;
   border-radius: 50%;
-  background: transparent;
-  box-shadow: none;
 }
-#header .logo {
-  box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
-}
+
