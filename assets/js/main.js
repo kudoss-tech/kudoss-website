@@ -425,4 +425,17 @@ if (form) {
   });
 }
 
+// Contact Form Success Handling
+const form = document.getElementById("contact-form");
+const successMessage = document.getElementById("form-success");
+
+if (form && successMessage) {
+  form.addEventListener("submit", function () {
+    setTimeout(() => {
+      form.style.display = "none";
+      successMessage.style.display = "block";
+    }, 800);
+  });
+}
+
 })(jQuery);
