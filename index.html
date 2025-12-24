@@ -955,29 +955,7 @@ contact_success_text: "გმადლობთ, რომ დაგვიკა
 
     }
   };
-const wrapper = document.getElementById("wrapper");
-  const langButtons = document.querySelectorAll(".lang-item");
-  const translatableElements = document.querySelectorAll("[data-key]");
-  const STORAGE_KEY = "siteLanguage";
-  const SUPPORTED_LANGS = ["en", "tr", "ge"];
-
-  function applyLanguage(lang) {
-    if (!SUPPORTED_LANGS.includes(lang)) return;
-
-    if (!wrapper) {
-      updateContent(lang);
-      return;
-    }
-
-    // fade out
-    wrapper.classList.remove("show");
-
-    setTimeout(() => {
-      updateContent(lang);
-      // fade in
-      wrapper.classList.add("show");
-    }, 200);
-  }
+  
 
   function updateContent(lang) {
     translatableElements.forEach(el => {
