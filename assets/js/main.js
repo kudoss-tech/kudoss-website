@@ -457,35 +457,5 @@ if (contactForm) {
     });
   });
 }
-// ===============================
-// Language system
-// ===============================
-
-const STORAGE_KEY = "siteLanguage";
-const SUPPORTED_LANGS = ["en", "tr", "ge"];
-
-function applyLanguage(lang) {
-  if (!SUPPORTED_LANGS.includes(lang)) return;
-
-  document.documentElement.lang = lang;
-  localStorage.setItem(STORAGE_KEY, lang);
-
-  document.querySelectorAll("[data-key]").forEach(el => {
-    const key = el.getAttribute("data-key");
-    if (window.translations && window.translations[lang] && window.translations[lang][key]) {
-      el.textContent = window.translations[lang][key];
-    }
-  });
-}
-
-// Sayfa yüklenince dili uygula
-const savedLang = localStorage.getItem(STORAGE_KEY) || "en";
-applyLanguage(savedLang);
-
 
 })(jQuery);
-// 🔤 FORCE HTML LANG FROM SAVED LANGUAGE
-document.addEventListener("DOMContentLoaded", function () {
-  const savedLang = localStorage.getItem("siteLanguage") || "en";
-  document.documentElement.lang = savedLang;
-});
